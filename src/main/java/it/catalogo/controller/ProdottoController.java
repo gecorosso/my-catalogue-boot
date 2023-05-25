@@ -1,8 +1,11 @@
 package it.catalogo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,11 +43,21 @@ public class ProdottoController {
 	}
 	
 	
-	
-	@PostMapping("/update")
-	public String modiFica() {
-		repo.save(null);
-		return "index";
+	@GetMapping("/update")
+	public ModelAndView modiFica(@RequestParam("id") String id, ModelMap mm) {
+//		//Cerca il prodotto;
+		Optional<Prodotto> prt = repo.findById(Integer.parseInt(id));
+		mm.addAttribute("prodottoDaModificare",prt);
+		
+		System.out.println(prt.get().getId());
+		System.out.println(prt.get().getNome());
+		System.out.println(prt.get().getDescrizione());
+		System.out.println(prt.get().getPrezzo());
+		
+		return new ModelAndView("index","listaModifiche",prt);
+		//		//Popola il form di modifica
+		//return new ModelAndView("index","formDiModifica",prt);
+		
 	}
 	
 	

@@ -58,7 +58,7 @@
     					<label> 
     						<a href="delete?id=${prodotto.id}">Cancella</a>
     					</label>
-    					<label>Modifica</label>
+    					<label><a href="update?id=${prodotto.id}">Modifica</label>
     				</td>
     			</tr>
     			</#list>
@@ -67,6 +67,14 @@
     </div>
     <br>
     <br>
+    <#if prodottoDaModificare??>
+    	
+    </#if>
     
+    
+    <br>
+    <br>
+    <br>
+    <br>
 </body>
 </html>
