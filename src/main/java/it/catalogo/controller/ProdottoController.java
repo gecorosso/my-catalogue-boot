@@ -22,6 +22,7 @@ public class ProdottoController {
 			System.out.println(p.getNome());
 		});
 		
+		
 		return "prodotti";
 	}
 	
