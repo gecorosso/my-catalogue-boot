@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/test")
 public class WelcomeController {
 
 //esercizio scrivi metodi di Request Mapping e di HttpSession

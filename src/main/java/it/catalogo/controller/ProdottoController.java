@@ -9,12 +9,12 @@ import it.catalogo.model.Prodotto;
 import it.catalogo.repository.ProdottoRepository;
 
 @Controller
-@RequestMapping("/prodotto")
+@RequestMapping("/")
 public class ProdottoController {
 	@Autowired
 	private ProdottoRepository repo;
 	
-	@GetMapping("/lista")
+	@GetMapping("/index")
 	public String list() {
 		Iterable<Prodotto> prods = repo.findAll();
 		
