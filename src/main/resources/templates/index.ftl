@@ -63,11 +63,8 @@
     			</tr>
     			</#list>
     		</tbody>
-    		
     	</table>
-    	
     </div>
-    
     <br>
     <br>
     
