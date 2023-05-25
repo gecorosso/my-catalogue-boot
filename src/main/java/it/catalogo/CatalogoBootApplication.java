@@ -12,6 +12,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @SpringBootApplication
 @ComponentScan(basePackages= {"it.catalogo.controller"})
 @EnableJpaRepositories(basePackages = "it.catalogo.repository")
+
 public class CatalogoBootApplication {	
 	public static void main(String[] args) {
 		SpringApplication.run(CatalogoBootApplication.class, args);

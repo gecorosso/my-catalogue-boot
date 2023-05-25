@@ -16,34 +16,35 @@ public class ProdottoController {
 	@Autowired
 	private ProdottoRepository repo;
 	
-	@GetMapping("/index")
+	@GetMapping("/")
 	public String list() {
 		Iterable<Prodotto> prods = repo.findAll();
 		
-		prods.forEach((Prodotto p)->{
-			System.out.println(p.getNome());
-		});
+//		prods.forEach((Prodotto p)->{
+//			System.out.println(p.getNome());
+//		});
 		
 		
 		return "index";
 	}
 	
 	@PostMapping("/add")
-	public String inseriMento(@ModelAttribute("datiProdotto") Prodotto p) {
-		repo.save(null);
-		return null;
+	public String aggiungi(@ModelAttribute("datiProdotto") Prodotto p) {
+		repo.save(p);
+		return "redirect:/";
 	}
+	
 	
 	@PostMapping("/update")
 	public String modiFica() {
 		repo.save(null);
-		return null;
+		return "index";
 	}
 	
 	@GetMapping("delete")
 	public String canCellazione() {
 		repo.delete(null);
-		return null;
+		return "index";
 	}
 	
 	

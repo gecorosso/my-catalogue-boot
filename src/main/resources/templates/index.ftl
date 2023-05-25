@@ -12,8 +12,8 @@
     <br>
     <br>
     <h2>Nuovo Prodotto</h2>
-    <div style="padding-right:43px;>
-    	<form method="post" action="add" id="datiProdotto" ">
+    <div style=120px;>
+    	<form method="post" action="add" id="datiProdotto" >
     		
 	    		<div > 
 		    		<label for="nome" style="padding-right:43px;"><b>nome</b></label>

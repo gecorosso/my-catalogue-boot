@@ -26,37 +26,37 @@ public class Prodotto {
 		return id;
 	}
 	
-	@Column(name="")
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
 	
-	@Column(name="")
+	
 	public String getNome() {
 		return nome;
 	}
 	
-	@Column(name="")
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
-	@Column(name="")
+	
 	public String getDescrizione() {
 		return descrizione;
 	}
 	
-	@Column(name="")
+	
 	public void setDescrizione(String descrizione) {
 		this.descrizione = descrizione;
 	}
 	
-	@Column(name="")
+	
 	public int getPrezzo() {
 		return prezzo;
 	}
 	
-	@Column(name="")
+	
 	public void setPrezzo(int prezzo) {
 		this.prezzo = prezzo;
 	}
