@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import it.catalogo.model.Prodotto;
 import it.catalogo.repository.ProdottoRepository;
@@ -17,15 +18,9 @@ public class ProdottoController {
 	private ProdottoRepository repo;
 	
 	@GetMapping("/")
-	public String list() {
+	public ModelAndView list() {
 		Iterable<Prodotto> prods = repo.findAll();
-		
-//		prods.forEach((Prodotto p)->{
-//			System.out.println(p.getNome());
-//		});
-		
-		
-		return "index";
+		return new ModelAndView("index","listaProdotti",prods);
 	}
 	
 	@PostMapping("/add")
@@ -34,6 +29,11 @@ public class ProdottoController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/delete")
+	public String canCellazione() {
+		repo.delete(null);
+		return "redirect:/";
+	}
 	
 	@PostMapping("/update")
 	public String modiFica() {
@@ -41,11 +41,7 @@ public class ProdottoController {
 		return "index";
 	}
 	
-	@GetMapping("delete")
-	public String canCellazione() {
-		repo.delete(null);
-		return "index";
-	}
+	
 	
 	
 	

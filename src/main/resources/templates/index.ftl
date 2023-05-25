@@ -37,10 +37,39 @@
     <br>
     <br>
     <br>
-    <h2>Lista prodotti</h2>
+    <h2 align="CENTER">Lista prodotti</h2>
     <div>
-    	Tabella dei prodotti
+    	<table align="CENTER" >
+    		<thead>
+    			<tr>
+    				<th>NOME</th>
+    				<th>DESCRIZIONE</th>
+    				<th>PREZZO</th>
+    				<th>AZIONE</th>
+    			</tr>
+    		</thead>
+    		<tbody border=1>
+    			<#list listaProdotti as prodotto>
+    			<tr>
+    				<td>${prodotto.nome}</td>
+    				<td>${prodotto.descrizione}</td>
+    				<td>${prodotto.prezzo}</td>
+    				<td>
+    					<label> 
+    						<a href="delete?id=${prodotto.id}">Cancella</a>
+    					</label>
+    					<label>Modifica</label>
+    				</td>
+    			</tr>
+    			</#list>
+    		</tbody>
+    		
+    	</table>
+    	
     </div>
+    
+    <br>
+    <br>
     
 </body>
 </html>
