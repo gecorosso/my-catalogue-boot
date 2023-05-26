@@ -45,19 +45,10 @@ public class ProdottoController {
 	
 	@GetMapping("/update")
 	public ModelAndView modiFica(@RequestParam("id") String id, ModelMap mm) {
-//		//Cerca il prodotto;
+		//Cerca il prodotto;
 		Optional<Prodotto> prt = repo.findById(Integer.parseInt(id));
 		mm.addAttribute("prodottoDaModificare",prt);
-		
-		System.out.println(prt.get().getId());
-		System.out.println(prt.get().getNome());
-		System.out.println(prt.get().getDescrizione());
-		System.out.println(prt.get().getPrezzo());
-		
-		return new ModelAndView("index","listaModifiche",prt);
-		//		//Popola il form di modifica
-		//return new ModelAndView("index","formDiModifica",prt);
-		
+		return new ModelAndView("prodotti","listaModifiche",prt);
 	}
 	
 	

@@ -19,7 +19,7 @@ public class Prodotto {
 	private String descrizione;
 	
 	@Column(name="prezzo")
-	private int prezzo;
+	private String prezzo;
 	
 	
 	public Integer getId() {
@@ -52,12 +52,12 @@ public class Prodotto {
 	}
 	
 	
-	public int getPrezzo() {
+	public String getPrezzo() {
 		return prezzo;
 	}
 	
 	
-	public void setPrezzo(int prezzo) {
+	public void setPrezzo(String prezzo) {
 		this.prezzo = prezzo;
 	}
 

@@ -67,9 +67,7 @@
     </div>
     <br>
     <br>
-    <#if prodottoDaModificare??>
-    	
-    </#if>
+    
     
     
     <br>
